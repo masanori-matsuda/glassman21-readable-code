@@ -16,4 +16,8 @@ https://github.com/glassman21/glassman21-readable-code
 ４.データファイルの読み込み方法
 ・レシピデータが外部ファイル（recipe-data.js）に分離されています。
 ・「リーダブルコードサンプル.html」の４行目がレシピデータを参照する記述。
+
+５.recipe-data.jsの構造
+・recipeDataに各レシピの名前が配列としてしてある。
+・それぞれのIndexがIDとして振り当てられる。
 ーー実行手順ここまでーー

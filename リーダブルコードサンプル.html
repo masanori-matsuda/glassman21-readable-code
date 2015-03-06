@@ -8,8 +8,8 @@ alert(getAllRecipeData());
 
 function getAllRecipeData(){
 	var allRecipe="";
-	for(var i=0;i<recipeData.length;i++){
-		allRecipe+=recipeData[i]+"\n";
+	for(var id=0;id<recipeData.length;id++){
+		allRecipe +=id +  ":" + recipeData[id]+"\n";
 	}
 	return allRecipe;
 }
