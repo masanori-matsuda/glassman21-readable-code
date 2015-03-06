@@ -2,7 +2,6 @@ Langage:Javascript
 
 
 ーー実行手順ここからーー
-
 １.ファイルのダウンロード
 https://github.com/glassman21/glassman21-readable-code
 を、自分のPCにクローンする。
@@ -14,4 +13,7 @@ https://github.com/glassman21/glassman21-readable-code
 ３.動作確認
 仕様通り動いているか確認してください
 
+４.データファイルの読み込み方法
+・レシピデータが外部ファイル（recipe-data.js）に分離されています。
+・「リーダブルコードサンプル.html」の４行目がレシピデータを参照する記述。
 ーー実行手順ここまでーー
