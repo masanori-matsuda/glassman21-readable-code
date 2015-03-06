@@ -102,9 +102,9 @@ end
 
 理由：操作方法がボタンを押して確認できる仕組みだったので、テストしやすかった
 理由：<input>タグ内で適当な改行があり見やすかった
+理由：関数名がDisplayRecipeDataとなっていて、関数名を見て判断しやすかった
     <input id="Button1" type="button" value="動作を確認する" 
 	onclick="DisplayRecipeData(recipeArray)" />
-理由：関数名がDisplay///となっていて、関数名を見て判断しやすかった
 
 
 
