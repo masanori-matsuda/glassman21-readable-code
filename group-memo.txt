@@ -1,8 +1,8 @@
-���O���[�v����
+﻿■グループメモ
 
 
-���R�F�֐������ugetAllRecipeData�v�ƂȂ��Ă���̂ŁA���V�s�f�[�^��"���ׂ�"�擾����@�\���Ƃ����ɗ����ł��܂����B
-���R�F���V�sID�̕ϐ������uid�v�ƂȂ��Ă���̂ŁA�����Ƀ��V�sID������Ƃ����ɗ����ł��܂����B
+理由：関数名が「getAllRecipeData」となっているので、レシピデータを"すべて"取得する機能だとすぐに理解できました。
+理由：レシピIDの変数名が「id」となっているので、ここにレシピIDが入るとすぐに理解できました。
 
 function getAllRecipeData(){
 	var allRecipe="";
@@ -12,15 +12,15 @@ function getAllRecipeData(){
 	return allRecipe;
 }
 
-���������������FgetAll�Ƃ���������܂œǂ�ŁA���ꂪ���V�s�f�[�^�����ׂĕ\������ӏ��Ɨ����ł�������
+見つけたきっかけ：getAllという文字列まで読んで、これがレシピデータをすべて表示する箇所と理解できたため
 
 
 
 
 
-���R�F�z��̃T�C�Y��#define��`���邱�ƂŁA�z��̃T�C�Y�ύX���ȒP�Ɏ����ł���悤�ɂȂ��Ă���
-���R�F������LINE_BUFFER�ƂȂ��Ă��āA�ϐ������痘�p���Ă�����e�������ɔ��f�ł���
-���R�F�G���[���b�Z�[�W�̒��Ƀt�@�C������݂��邱�ƂŁA�f�o�b�O���₷���R�[�h�ł�����
+理由：配列のサイズを#define定義することで、配列のサイズ変更が簡単に実現できるようになっていた
+理由：命名がLINE_BUFFERとなっていて、変数名から利用している内容がすぐに判断できた
+理由：エラーメッセージの中にファイル名を設けることで、デバッグしやすいコードであった
 
 	#define LINE_BUFFER 1024
 
@@ -33,13 +33,13 @@ function getAllRecipeData(){
 
 		file = fopen(file_name, "r");
 		if (file == NULL) {
-			fprintf(stderr, "�t�@�C�����I�[�v���ł��܂���: <%s>\n", file_name);
+			fprintf(stderr, "ファイルをオープンできません: <%s>\n", file_name);
 			return 1;
 		}
 
  -		if (fgets(line, 1024, file) == NULL) {
  +		if (fgets(line, LINE_BUFFER, file) == NULL) {
-			fprintf(stderr, "�t�@�C���̓ǂݍ��݂Ɏ��s���܂���: <%s>\n", file_name);
+			fprintf(stderr, "ファイルの読み込みに失敗しました: <%s>\n", file_name);
 			return 1;
 		}
 
@@ -51,25 +51,25 @@ function getAllRecipeData(){
 
 
 
-���R�Freadme�Ɏ����Ƃ͈Ⴄ���̐l�ɔz�������R�����g�̋L�q�ł�����
+理由：readmeに自分とは違う環境の人に配慮したコメントの記述であった
 
-�����Ƀf�[�^�t�@�C�����w�肵�āARuby�C���^�[�v���^�[��recipe.rb�����s���Ă��������B
+引数にデータファイルを指定して、Rubyインタープリターでrecipe.rbを実行してください。
 
-�ȉ��̓R�}���h���C���ibash��R�}���h�v�����v�g�Ȃǁj�Ŏ��s�����ł��B
+以下はコマンドライン（bashやコマンドプロンプトなど）で実行する例です。
 
 $ ruby recipe.rb recipe-data.txt
-Unix��Linux�Ȃǂ̊��ł́A�ȉ��̂悤�Ɏ��s���邱�Ƃ��ł��܂��B
+UnixやLinuxなどの環境では、以下のように実行することもできます。
 
 $ ./recipe.rb recipe-data.txt
-�������ϐ���PATH���ʂ��Ă��Ȃ��ꍇ�A��΃p�X�Ŏw�肵�Ă��������B
+もし環境変数のPATHが通っていない場合、絶対パスで指定してください。
 
 $ /path/to/ruby recipe.rb recipe-data.txt
 
 
 
 
-���R�F�ϐ������݂ď������e���킩��₷��������
-���R�Fputs �I�����C�X�@���@puts "" �ƃR�[�h�̋L�q��������₷������
+理由：変数名をみて処理内容がわかりやすいかった
+理由：puts オムライス　→　puts "" とコードの記述が分かりやすかった
 
 data_path = ARGV[0]
 
@@ -78,14 +78,14 @@ puts File.read(data_path)
 
 
 
-���R�F���V�s�f�[�^���i�[����z���A����̃��V�s��\���ϐ������ꂼ�ꕡ���`�A�P���`�ŕ\����Ă��Ă킩��₷������
+理由：レシピデータを格納する配列や、特定のレシピを表す変数がそれぞれ複数形、単数形で表されていてわかりやすかった
 recipes.each do |recipe|
   puts recipe
 end
 
 
 
-���R�F�t�@�C����ǂݍ��ރ��\�b�h����read_lines�Ƃ��Ă��č���̊g�������悭�킩��₷������
+理由：ファイルを読み込むメソッド名をread_linesとしていて今後の拡張性もよくわかりやすかった
 def read_lines(data_path)
   recipes = []
   File.open(data_path, "r") do |file|
@@ -100,22 +100,22 @@ end
 
 
 
-���R�F������@���{�^���������Ċm�F�ł���d�g�݂������̂ŁA�e�X�g���₷������
-���R�F<input>�^�O���œK���ȉ��s�����茩�₷������
-    <input id="Button1" type="button" value="������m�F����" 
+理由：操作方法がボタンを押して確認できる仕組みだったので、テストしやすかった
+理由：<input>タグ内で適当な改行があり見やすかった
+    <input id="Button1" type="button" value="動作を確認する" 
 	onclick="DisplayRecipeData(recipeArray)" />
-���R�F�֐�����Display///�ƂȂ��Ă��āA�֐��������Ĕ��f���₷������
+理由：関数名がDisplay///となっていて、関数名を見て判断しやすかった
 
 
 
 
-���R�F�����̒��߂�Chrome�œ���m�F�ς݂Ƃ���A�ǂ��܂Ńe�X�g���Ă��邩�킩��₷������
-���s���@�F
-Page_ReadableCode.html���u���E�U�ŊJ���܂��B
-������m�F����{�^�����N���b�N���܂��B
+理由：メモの注釈にChromeで動作確認済みとあり、どこまでテストしているかわかりやすかった
+実行方法：
+Page_ReadableCode.htmlをブラウザで開きます。
+動作を確認するボタンをクリックします。
 
-���V�s�f�[�^�ɂ��āF
-HTML�y�[�W���ɒ��ڃ��V�s�f�[�^���L�ڂ��܂��B
+レシピデータについて：
+HTMLページ内に直接レシピデータを記載します。
 
 
 
