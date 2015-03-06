@@ -1,1 +1,2 @@
 Langage:Javascript
+あげあげ
