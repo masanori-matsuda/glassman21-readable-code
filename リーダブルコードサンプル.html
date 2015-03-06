@@ -15,11 +15,13 @@ function getAllRecipeData(){
 }
 
 
+//指定したレシピIDのレシピデータを取得する。
 function getRecipeDataById(id) {
     var recipe = "";
     return id + ":" + recipeData[id];
 }
 
+//指定したレシピIDのレシピデータを表示する。
 function alertRecipeData(id)
 {
     alert(getRecipeDataById(id));

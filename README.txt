@@ -12,6 +12,7 @@ https://github.com/glassman21/glassman21-readable-code
 
 ３.動作確認
 仕様通り動いているか確認してください
+レシピIDをフォームに入力して、動作を確認するボタンをクリックします。
 
 ４.データファイルの読み込み方法
 ・レシピデータが外部ファイル（recipe-data.js）に分離されています。
@@ -20,4 +21,6 @@ https://github.com/glassman21/glassman21-readable-code
 ５.recipe-data.jsの構造
 ・recipeDataに各レシピの名前が配列としてしてある。
 ・それぞれのIndexがIDとして振り当てられる。
+
+
 ーー実行手順ここまでーー
