@@ -1,4 +1,4 @@
-<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+﻿<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
 <head>
 <meta charset="UTF-8" />
 <script type="text/javascript" src="./recipe-data.js"></script>
@@ -14,8 +14,26 @@ function getAllRecipeData(){
 	return allRecipe;
 }
 
+
+function getRecipeDataById(id) {
+    var recipe = "";
+    return id + ":" + recipeData[id];
+}
+
+function alertRecipeData(id)
+{
+    alert(getRecipeDataById(id));
+}
+
 </script>
 </head>
 <body>
+
+    <form id="Form1">
+        <input id="Text1" type="text" />
+        <br />
+        <input id="Button1" type="button" value="動作を確認する" onclick="alertRecipeData(document.getElementById('Text1').value)" />
+    </form>
+
 </body>
 </html>
