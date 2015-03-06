@@ -1,1 +1,1 @@
-Editor:Javascript
+Langage:Javascript
