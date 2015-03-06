@@ -21,6 +21,9 @@ https://github.com/glassman21/glassman21-readable-code
 ５.recipe-data.jsの構造
 ・recipeDataに各レシピの名前が配列としてしてある。
 ・それぞれのIndexがIDとして振り当てられる。
-
+・仕様7に伴い、レシピデータのフォーマットを変更しました。
+	recipeData(ID) = { "ID": (レシピID), "RecipeName": (レシピ名), "RecipeMethod": (調理法) }
+	レシピを追加する際は、変数名をrecipeData# (#:0からの連番)で定義し、
+	配列recipeDataに追加してください。
 
 ーー実行手順ここまでーー

@@ -9,7 +9,7 @@ alert(getAllRecipeData());
 function getAllRecipeData(){
 	var allRecipe="";
 	for(var id=0;id<recipeData.length;id++){
-		allRecipe +=id +  ":" + recipeData[id]+"\n";
+	    allRecipe += recipeData[id]["ID"] + ":" + recipeData[id]["RecipeName"] + "  " + recipeData[id]["RecipeMethod"] + "\n";
 	}
 	return allRecipe;
 }
@@ -18,7 +18,7 @@ function getAllRecipeData(){
 //指定したレシピIDのレシピデータを取得する。
 function getRecipeDataById(id) {
     var recipe = "";
-    return id + ":" + recipeData[id];
+    return recipeData[id]["ID"] + ":" + recipeData[id]["RecipeName"] + "  " + recipeData[id]["RecipeMethod"];
 }
 
 //指定したレシピIDのレシピデータを表示する。
